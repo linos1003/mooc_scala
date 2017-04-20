@@ -8,7 +8,8 @@ object Main {
 //        print(pascal(col, row) + " ")
 //      println()
 //    }
-    
+    val string = "I told him (that it’s not (yet) done). (But he wasn’t listening)"
+   println( balance(string.toList))
   }
 
   /**
@@ -25,7 +26,22 @@ object Main {
   /**
    * Exercise 2
    */
-    def balance(chars: List[Char]): Boolean = ???
+    def balance(chars: List[Char]): Boolean = {
+      var acc = 0
+      def loop(chars: List[Char]): Unit ={
+        if(!chars.isEmpty){
+          val x=chars.head
+          if(x=='(')
+            acc+=1
+          else if(x==')')
+            acc-=1
+           if(acc>=0) loop(chars.tail)
+        }
+
+      }
+      loop(chars)
+      acc==0
+    }
 
   /**
    * Exercise 3
