@@ -1,6 +1,7 @@
 object relationals {
   val x: Int = 1
   val x1 = new Rational(2, 3)
+   val t=new Rational(-1,1)
 
 
   x1.add(x1)
@@ -8,6 +9,8 @@ object relationals {
   println(x1)
 
   class Rational(x: Int, y: Int) {
+    require(y>0,"denominator must be nonzero")
+    assert(x>=0)
     private val g = gcd(x, y)
 
     def numer = x / g
