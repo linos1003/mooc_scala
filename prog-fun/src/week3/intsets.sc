@@ -1,6 +1,7 @@
 object intsets {
   println("Welcome to the Scala worksheet")
 
+  val v1= new NonEmpty(1, new Empty,new Empty)
   abstract class IntSet {
     def incl(x: Int): IntSet
 
